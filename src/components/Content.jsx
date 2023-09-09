@@ -5,7 +5,9 @@ import MainContent from "./MainContent";
 const Content = () => {
   return (
     <>
-      <SideNav />
+      <div className="mt-[51px]">
+        <SideNav />
+      </div>
       {/* <MainContent /> */}
     </>
   );
