@@ -6,7 +6,7 @@ const Content = () => {
   return (
     <>
       <SideNav />
-      <MainContent />
+      {/* <MainContent /> */}
     </>
   );
 };

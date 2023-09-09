@@ -5,7 +5,7 @@ export const ArrowUp = () => {
     <svg
       className="fill-[#8e9096] hover:fill-[#dde0e4]"
       viewBox="0 0 24 24"
-      style="width:1.3rem;height:1.3rem;"
+      style={{width:"01.3rem", height: "1.3rem"}}
     >
       <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"></path>
     </svg>
@@ -17,7 +17,7 @@ export const ArrowLeft = () => {
     <svg
       className="mr-4 cursor-pointer fill-[#dde0e4]"
       viewBox="0 0 24 24"
-      style="width:1.3rem;height:1.3rem;"
+      style={{width:"01.3rem", height: "1.3rem"}}
     >
       <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path>
     </svg>
