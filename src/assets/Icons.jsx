@@ -315,3 +315,15 @@ export const SettingsIcon = () => {
     </svg>
   );
 };
+
+export const ArrowDown = () => {
+  return (
+    <svg
+      className="cursor-pointer fill-[#dde0e4]"
+      viewBox="0 0 24 24"
+      style={{ width: "01.3rem", height: "1.3rem" }}
+    >
+      <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+    </svg>
+  );
+};

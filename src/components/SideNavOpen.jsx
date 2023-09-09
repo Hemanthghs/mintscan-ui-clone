@@ -1,161 +1,106 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-    ArrowUp,
-    MarketIcon,
-    NetworkIcon,
-    GovIcon,
-    IBCIcon,
-    DevIcon,
-    HeartBeatIcon,
-    DominanceIcon,
-    JourneyIcon,
-    ValidatorsIcon,
-    NoticeIcon,
-    BlogIcon,
-    ApplicationsIcon,
-    ReleaseNotesIcon,
-  } from "../assets/Icons";
+  ArrowUp,
+  MarketIcon,
+  NetworkIcon,
+  GovIcon,
+  IBCIcon,
+  DevIcon,
+  HeartBeatIcon,
+  DominanceIcon,
+  JourneyIcon,
+  ValidatorsIcon,
+  NoticeIcon,
+  BlogIcon,
+  ApplicationsIcon,
+  ReleaseNotesIcon,
+  ArrowDown,
+} from "../assets/Icons";
 
 const SideNavOpen = () => {
+  const [eOpen, setEOpen] = useState(true);
+  const [aOpen, setAOpen] = useState(true);
+  const [vOpen, setVOpen] = useState(true);
+  const [iOpen, setIOpen] = useState(true);
   return (
     <div>
       <div className="p-2 pt-3">
         <div className="mb-1 flex cursor-pointer items-center justify-between px-3 py-[13px] text-[#8d98a5] transition duration-150 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:text-[#dde0e4] hover:ease-in">
           <div className="text-[14px] font-semibold">EXPLORER</div>
-          <div>
-            <ArrowUp />
+          <div
+            onClick={() => {
+              setEOpen((x) => !x);
+            }}
+          >
+            {eOpen ? <ArrowUp /> : <ArrowDown />}
           </div>
         </div>
         <div className="border-b-[1px] border-[#282a32]"></div>
-        <div className="mb-1 mt-1 flex cursor-pointer flex-col items-center px-1 py-[13px] text-[#8d98a5] transition duration-200 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:ease-in">
-          <div className="mb-3 flex w-full items-center justify-between px-2 hover:text-[#dde0e4]">
+        <div className="mb-1 mt-1 flex cursor-pointer flex-col items-center px-1 pt-[13px] pb-[10px] text-[#8d98a5] transition duration-200 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:ease-in">
+          <div className="flex w-full items-center justify-between px-2 hover:text-[#dde0e4]">
             <div className="text-[14px] font-semibold">ANALYTICS</div>
-            <div>
-              <ArrowUp />
+            <div
+              onClick={() => {
+                setAOpen((x) => !x);
+              }}
+            >
+              {aOpen ? <ArrowUp /> : <ArrowDown />}
             </div>
           </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <MarketIcon />
+          {aOpen && (
+            <div className="w-full mt-3">
+              <CustomSideBarItem Icon={<MarketIcon />} name={"Market"} />
+              <CustomSideBarItem Icon={<NetworkIcon />} name={"Network"} />
+              <CustomSideBarItem Icon={<GovIcon />} name={"Governance"} />
             </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Market
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <NetworkIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Network
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <GovIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Governance
-            </div>
-          </div>
+          )}
         </div>
         <div className="border-b-[1px] border-[#282a32]"></div>
-        <div className="mb-1 mt-1 flex cursor-pointer flex-col items-center px-1 py-[13px] text-[#8d98a5] transition duration-200 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:ease-in">
-          <div className="mb-3 flex w-full items-center justify-between px-2 hover:text-[#dde0e4]">
+        <div className="mb-1 mt-1 flex cursor-pointer flex-col items-center px-1 pt-[13px] pb-[10px] text-[#8d98a5] transition duration-200 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:ease-in">
+          <div className="flex w-full items-center justify-between px-2 hover:text-[#dde0e4]">
             <div className="text-[14px] font-semibold">VISUALIZATIONS</div>
-            <div>
-              <ArrowUp />
+            <div
+              onClick={() => {
+                setVOpen((x) => !x);
+              }}
+            >
+              {vOpen ? <ArrowUp /> : <ArrowDown />}
             </div>
           </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <IBCIcon />
+          {vOpen && (
+            <div className="w-full mt-3">
+              <CustomSideBarItem Icon={<IBCIcon />} name={"IBC Network"} />
+              <CustomSideBarItem Icon={<DevIcon />} name={"Dev Activity"} />
+              <CustomSideBarItem Icon={<HeartBeatIcon />} name={"Heartbeat"} />
+              <CustomSideBarItem Icon={<DominanceIcon />} name={"Dominance"} />
+              <CustomSideBarItem Icon={<JourneyIcon />} name={"Journey"} />
+              <CustomSideBarItem
+                Icon={<ValidatorsIcon />}
+                name={"Validators"}
+              />
             </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              IBC Network
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <DevIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Dev Activity
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <HeartBeatIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Heartbeat
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <DominanceIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Dominance
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <JourneyIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Journey
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <ValidatorsIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Validators
-            </div>
-          </div>
+          )}
         </div>
         <div className="border-b-[1px] border-[#282a32]"></div>
-        <div className="mb-1 mt-1 flex cursor-pointer flex-col items-center px-1 py-[13px] text-[#8d98a5] transition duration-200 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:ease-in">
-          <div className="mb-3 flex w-full items-center justify-between px-2 hover:text-[#dde0e4]">
+        <div className="mb-1 mt-1 flex cursor-pointer flex-col items-center px-1 pt-[13px] pb-[10px] text-[#8d98a5] transition duration-200 ease-out hover:rounded-md hover:bg-[#1c1d2a] hover:ease-in">
+          <div className="flex w-full items-center justify-between px-2 hover:text-[#dde0e4]">
             <div className="text-[14px] font-semibold">INFORMATION</div>
-            <div>
-              <ArrowUp />
+            <div
+              onClick={() => {
+                setIOpen((x) => !x);
+              }}
+            >
+              {iOpen ? <ArrowUp /> : <ArrowDown />}
             </div>
           </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <NoticeIcon />
+          {iOpen && (
+            <div className="w-full mt-3">
+              <CustomSideBarItem Icon={<NoticeIcon />} name={"Notice"} />
+              <CustomSideBarItem Icon={<BlogIcon />} name={"Blog"} />
+              <CustomSideBarItem Icon={<ApplicationsIcon />} name={"Applications"} />
+              <CustomSideBarItem Icon={<ReleaseNotesIcon />} name={"Release Note"} />
             </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Notice
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <BlogIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Blog
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <ApplicationsIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Applications
-            </div>
-          </div>
-          <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
-            <div className="h-[18px] w-[18px]">
-              <ReleaseNotesIcon />
-            </div>
-            <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
-              Release Note
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
@@ -163,3 +108,14 @@ const SideNavOpen = () => {
 };
 
 export default SideNavOpen;
+
+const CustomSideBarItem = ({ Icon, name }) => {
+  return (
+    <div className="flex w-full items-center rounded-md px-2 py-2 hover:bg-[#252632]">
+      <div className="h-[18px] w-[18px]">{Icon}</div>
+      <div className="ml-[9px] text-[14px] font-semibold text-[#dde0e4]">
+        {name}
+      </div>
+    </div>
+  );
+};
