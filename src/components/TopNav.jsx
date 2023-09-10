@@ -3,7 +3,7 @@ import { ChainsIcon, SearchIcon, SettingsIcon } from "../assets/Icons";
 
 const TopNav = ({ sideNavOpen }) => {
   return (
-    <div className="flex border-b-[1px] border-[#282a32] fixed top-0 z-10 w-full bg-[#1c1d2a]">
+    <div className="flex border-b-[1px] border-[#2d3239] fixed top-0 z-10 w-full bg-[#1c1d2a]">
       <div
         className="flex h-[52px] w-[251px] items-center justify-start border-r-[1px] border-[#282a32] bg-[#161821] cursor-pointer"
         style={{ width: sideNavOpen ? "251px" : "72px" }}

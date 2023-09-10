@@ -1,11 +1,17 @@
 import React from "react";
-import { HighlightIcon, ICSIcon, TetherIcon } from "../assets/Icons";
+import {
+  ArrowRightFull,
+  HighlightIcon,
+  ICSIcon,
+  StarIcon,
+  TetherIcon,
+} from "../assets/Icons";
 
 const TopChains = () => {
   return (
-    <div className="bg-[#1c1d2a]  p-2">
-      <div className=" w-[470px] hover:bg-[#161821] border-[1px] hover:border-[#282a32] border-[#1c1d2a] rounded-md px-3 py-3 transition duration-200 ease-out">
-        <div className="flex items-center mb-4">
+    <div className="bg-[#1c1d2a] flex p-2">
+      <div className=" w-[470px] hover:bg-[#161821] border-[1px] hover:border-[#2d3239] border-[#1c1d2a] rounded-lg px-3 pl-4 py-3 transition duration-200 ease-out mr-6">
+        <div className="flex items-center mb-3 ml-2">
           <div className="h-[14px] w-[14px]">
             <HighlightIcon />
           </div>
@@ -41,7 +47,36 @@ const TopChains = () => {
           />
         </div>
       </div>
-      <div></div>
+      <div className="w-[300px] hover:bg-[#161821] border-[1px] hover:border-[#2d3239] border-[#1c1d2a] rounded-lg px-3 pl-4 py-3 transition duration-200 ease-out">
+        <div className="flex items-center mb-3 ml-2">
+          <div className="h-[14px] w-[14px] mt-[-2px]">
+            <StarIcon />
+          </div>
+          <div className="text-[14px] text-[#c6cbd2] font-semibold ml-2 flex w-full items-center justify-between">
+            <div>Pins [3]</div>
+            <div className="h-[14px] w-[14px] mt-[-2px] cursor-pointer">
+              <ArrowRightFull />
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-rows-3 gap-y-1 gap-x-3">
+          <NetworkItem
+            logo={"https://www.mintscan.io/assets/chains/png_32/cosmos.png"}
+            name={"COSMOS"}
+            badge={null}
+          />
+          <NetworkItem
+            logo={"https://www.mintscan.io/assets/chains/png_32/osmosis.png"}
+            name={"OSMOSIS"}
+            badge={null}
+          />
+          <NetworkItem
+            logo={"https://www.mintscan.io/assets/chains/png_32/archway.png"}
+            name={"ARCHWAY"}
+            badge={null}
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -64,7 +99,7 @@ const NetworkItem = ({ logo, name, badge = null }) => {
 
 const TetherBadge = () => {
   return (
-    <div className="flex bg-[#0e2f21] border-[1px] border-[#267d57] items-center p-1 px-[6px] rounded-md">
+    <div className="flex bg-[#0e2f21] border-[1px] border-[#267d57] items-center p-1 px-[6px] rounded-[4px]">
       <div>
         <TetherIcon />
       </div>
@@ -77,7 +112,7 @@ const TetherBadge = () => {
 
 const ICSBadge = () => {
   return (
-    <div className="flex bg-[#0d2230] border-[1px] border-[#22577a] items-center p-1 px-[6px] rounded-md">
+    <div className="flex bg-[#0d2230] border-[1px] border-[#22577a] items-center p-1 px-[6px] rounded-[4px]">
       <div>
         <ICSIcon />
       </div>
