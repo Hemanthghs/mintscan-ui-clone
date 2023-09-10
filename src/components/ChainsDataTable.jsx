@@ -115,9 +115,15 @@ const ChainsDataTable = ({ sideNavOpen }) => {
                     <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
                       <span>$0.9601</span>
                     </td>
-                    <td className="font-lato text-[#f96271] text-[15px] font-semibold text-right px-10">
-                      <span>-5.25%</span>
-                    </td>
+                    {(index % 3 === 0 ) || (index % 3 === 4 )? (
+                      <td className="font-lato text-[#f96271] text-[15px] font-semibold text-right px-10">
+                        <span>-5.25%</span>
+                      </td>
+                    ) : (
+                      <td className="font-lato text-[#70eb8d] text-[15px] font-semibold text-right px-10">
+                        <span>7.25%</span>
+                      </td>
+                    )}
                     <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
                       <span>9.4%</span>
                     </td>
