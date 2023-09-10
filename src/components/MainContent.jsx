@@ -11,7 +11,7 @@ const MainContent = ({ sideNavOpen }) => {
     >
       <MainHeader />
       <TopChains />
-      <ChainsData />
+      <ChainsData sideNavOpen={sideNavOpen}/>
     </div>
   );
 };

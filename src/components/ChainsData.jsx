@@ -2,7 +2,7 @@ import React from "react";
 import { SearchIcon } from "../assets/Icons";
 import ChainsDataTable from "./ChainsDataTable";
 
-const ChainsData = () => {
+const ChainsData = ({sideNavOpen}) => {
   return (
     <div className="p-8">
       <div className="pt-4 pb-3">
@@ -28,7 +28,7 @@ const ChainsData = () => {
         </div>
       </div>
       <div className="mt-10 cursor-pointer">
-        <ChainsDataTable />
+        <ChainsDataTable sideNavOpen={sideNavOpen}/>
       </div>
     </div>
   );

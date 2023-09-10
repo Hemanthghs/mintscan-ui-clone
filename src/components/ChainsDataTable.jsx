@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowSolidDown, ArrowSolidUp, StarIcon } from "../assets/Icons";
 
-const ChainsDataTable = () => {
+const ChainsDataTable = ({ sideNavOpen }) => {
   const chains = [
     {
       name: "AKASH",
@@ -54,38 +54,109 @@ const ChainsDataTable = () => {
       token: "UMEE",
     },
   ];
+  const colNames = [
+    "Price",
+    "Change",
+    "APY",
+    "Infaltion",
+    "Market Cap.",
+    "Staked Amount",
+    "Total Accounts",
+    "Active Users",
+    "Blocks",
+    "Block Time",
+    "Transactions",
+    "TPS",
+  ];
   return (
-    <div className="flex">
-      <table class="table-auto">
-        <thead className="border-b-[1px] border-[#2d3239]">
-          <tr>
-            <th className="pl-2">
-              <ColHeader title={"Pins"} />
-            </th>
-            <th>
-              <ColHeader title={"Chain"} />
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {chains.map((chain, index) => (
-            <tr key={index} className="hover:bg-[#1c1d2a]">
-              <td>
-                <div className="flex items-center justify-center py-2">
-                  <StarIcon height={15} width={15} />
-                </div>
-              </td>
-              <td>
-                <ChainName
-                  logo={chain.logo}
-                  name={chain.name}
-                  token={chain.name}
-                />
-              </td>
+    <div
+      className={
+        sideNavOpen ? "w-[calc(100vw-352px)]" : "w-[calc(100vw-150px)]"
+      }
+      style={{ display: "flex" }}
+    >
+      <div className=" overflow-x-scroll">
+        <table class="table-auto">
+          <thead className="border-b-[1px] border-[#2d3239]">
+            <tr>
+              <th className="pl-2">
+                <ColHeader title={"Pins"} />
+              </th>
+              <th>
+                <ColHeader title={"Chain"} />
+              </th>
+              {colNames.map((colName, index) => (
+                <th key={index}>
+                  <ColHeader title={colName} />
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {[1, 2].map(() => (
+              <>
+                {chains.map((chain, index) => (
+                  <tr
+                    key={index}
+                    className="hover:bg-[#1c1d2a] border-b-[1px] border-[#2d3239]"
+                  >
+                    <td>
+                      <div className="flex items-center justify-center py-2">
+                        <StarIcon height={15} width={15} />
+                      </div>
+                    </td>
+                    <td>
+                      <ChainName
+                        logo={chain.logo}
+                        name={chain.name}
+                        token={chain.name}
+                      />
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <span>$0.9601</span>
+                    </td>
+                    <td className="font-lato text-[#f96271] text-[15px] font-semibold text-right px-10">
+                      <span>-5.25%</span>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <span>9.4%</span>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <span>8.1%</span>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <div>$209.04m</div>
+                      <div className="text-[#98a2ae] text-[13px]">142nd</div>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <div>$209.04m</div>
+                      <div className="text-[#98a2ae] text-[13px]">142nd</div>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <span>87,454</span>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <span>17,005</span>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <div>12,345,034</div>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <div>6.05s</div>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <div>9,234,234</div>
+                    </td>
+                    <td className="font-lato text-[#e8eaed] text-[15px] font-semibold text-right px-10">
+                      <div>0.11/s</div>
+                    </td>
+                  </tr>
+                ))}
+              </>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
