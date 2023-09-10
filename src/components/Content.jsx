@@ -8,7 +8,7 @@ const Content = () => {
 
   return (
     <div className="border-r-[1px] border-[#282a32]">
-      <TopNav sideNavOpen={sideNavOpen}/>
+      <TopNav sideNavOpen={sideNavOpen} />
       <div className="mt-[51px] flex">
         <SideNav sideNavOpen={sideNavOpen} setSideNavOpen={setSideNavOpen} />
         <MainContent sideNavOpen={sideNavOpen} />

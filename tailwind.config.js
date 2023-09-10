@@ -17,6 +17,7 @@ export default {
         // "Helvetica Neue",
         "sans-serif",
       ],
+      lato: ["Lato", "sans-serif"],
     },
   },
   plugins: [],
