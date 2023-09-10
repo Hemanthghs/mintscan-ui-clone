@@ -377,11 +377,11 @@ export const TetherIcon = () => {
   );
 };
 
-export const StarIcon = () => {
+export const StarIcon = ({width=14, height=14}) => {
   return (
     <svg
-      width="14"
-      height="14"
+      width={width}
+      height={height}
       viewBox="0 0 12 12"
       fill="#50b6b9"
       xmlns="http://www.w3.org/2000/svg"
@@ -395,6 +395,28 @@ export const ArrowRightFull = () => {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" style={{ fill: "#8e9096" }}>
       <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+    </svg>
+  );
+};
+
+export const ArrowSolidDown = () => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      style={{ height: "18px", width: "18px", fill: "#3f4751" }}
+    >
+      <path d="M7,10L12,15L17,10H7Z"></path>
+    </svg>
+  );
+};
+
+export const ArrowSolidUp = () => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      style={{ height: "18px", width: "18px", fill: "#3f4751" }}
+    >
+      <path d="M7,15L12,10L17,15H7Z"></path>
     </svg>
   );
 };

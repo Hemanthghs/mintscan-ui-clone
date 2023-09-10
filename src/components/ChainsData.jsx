@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchIcon } from "../assets/Icons";
+import ChainsDataTable from "./ChainsDataTable";
 
 const ChainsData = () => {
   return (
@@ -25,6 +26,9 @@ const ChainsData = () => {
         <div>
           <SearchBar />
         </div>
+      </div>
+      <div className="mt-10 cursor-pointer">
+        <ChainsDataTable />
       </div>
     </div>
   );
