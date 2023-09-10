@@ -13,9 +13,9 @@ const MainHeader = () => {
             blockchain networks.
           </div>
         </div>
-        <div className="p-[2px] border border-[#282a32] rounded-lg">
+        <div className="p-[2px] border border-[#282a32] rounded-lg cursor-pointer">
           <img
-            className="w-[400px] h-[100px] rounded-lg"
+            className="w-[405px] h-[100px] rounded-lg"
             src="https://serve.dev-mintscan.com/__prod_static/advertisement/1685530255110-5fb37fbf-0e84-4716-bbd8-ed51b7c5a660"
             alt=""
           />
