@@ -2,9 +2,9 @@ import React from "react";
 import { SearchIcon } from "../assets/Icons";
 import ChainsDataTable from "./ChainsDataTable";
 
-const ChainsData = ({sideNavOpen}) => {
+const ChainsData = ({ sideNavOpen }) => {
   return (
-    <div className="p-8">
+    <div className="p-8 pb-16 border-b-[1px] border-[#2d3239]">
       <div className="pt-4 pb-3">
         <span className="font-custom1 text-[20px] font-medium text-[#dde0e4]">
           Chains
@@ -28,7 +28,7 @@ const ChainsData = ({sideNavOpen}) => {
         </div>
       </div>
       <div className="mt-10 cursor-pointer">
-        <ChainsDataTable sideNavOpen={sideNavOpen}/>
+        <ChainsDataTable sideNavOpen={sideNavOpen} />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import MainHeader from "./MainHeader";
 import TopChains from "./TopChains";
 import ChainsData from "./ChainsData";
+import MainFooter from "./MainFooter";
 
 const MainContent = ({ sideNavOpen }) => {
   return (
@@ -12,6 +13,7 @@ const MainContent = ({ sideNavOpen }) => {
       <MainHeader />
       <TopChains />
       <ChainsData sideNavOpen={sideNavOpen}/>
+      <MainFooter />
     </div>
   );
 };
