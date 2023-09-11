@@ -24,3 +24,7 @@ body {
   max-height: 10%;
   padding-top: 100px;
 }
+
+.blur-effect {
+  backdrop-filter: blur(2px);
+}

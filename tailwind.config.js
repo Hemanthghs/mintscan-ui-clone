@@ -21,4 +21,6 @@ export default {
     },
   },
   plugins: [],
+  important:"#root",
+  important: true,
 };

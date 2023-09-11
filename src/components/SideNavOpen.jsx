@@ -42,21 +42,18 @@ const SideNavOpen = () => {
               <NetworkItem
                 logo={"https://www.mintscan.io/assets/chains/png_32/cosmos.png"}
                 name={"COSMOS"}
-                badge={null}
               />
               <NetworkItem
                 logo={
                   "https://www.mintscan.io/assets/chains/png_32/osmosis.png"
                 }
                 name={"OSMOSIS"}
-                badge={null}
               />
               <NetworkItem
                 logo={
                   "https://www.mintscan.io/assets/chains/png_32/archway.png"
                 }
                 name={"ARCHWAY"}
-                badge={null}
               />
             </div>
           )}
@@ -152,17 +149,20 @@ const CustomSideBarItem = ({ Icon, name }) => {
   );
 };
 
-const NetworkItem = ({ logo, name, badge = null }) => {
+const NetworkItem = ({ logo, name }) => {
   return (
     <div className="hover:bg-[#252632] rounded-md py-2 px-3 cursor-pointer flex justify-between items-center">
       <div className="flex items-center">
         <div className="flex items-center">
-          <div className="mt-[-3px] mr-2"><StarIcon width={13} height={13} fill={"#5e8fb3"}/></div>
+          <div className="mt-[-3px] mr-2">
+            <StarIcon width={13} height={13} fill={"#5e8fb3"} />
+          </div>
           <img className="h-[18px] w-[18px]" src={logo} alt="" />
         </div>
-        <div className="ml-3 text-[#e8eaed] text-[14px] font-semibold">{name}</div>
+        <div className="ml-2 text-[#e8eaed] text-[14px] font-semibold">
+          {name}
+        </div>
       </div>
-      <div>{badge}</div>
     </div>
   );
 };
